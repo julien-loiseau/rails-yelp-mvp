@@ -13,8 +13,16 @@
       </ul>
     </li>
   </ul>
-  <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+  <div class="container mt-3">
+  <h2>Add a review </h2>
+  <%= simple_form_for [ @restaurant, @review ] do |f| %>
+    <%= f.input :rating, collection: (0..5) %>
+    <%= f.input :content %>
+    <%= f.submit "Submit", class: "btn btn-primary mt-3" %>
+  <% end %>
+<div>
 </div>
+
 
 
 

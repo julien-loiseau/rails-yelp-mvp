@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review.restaurant = @restaurant
     @review.save
-    redirect_to restaurants_path
+    redirect_to restaurant_path(@restaurant)
   end 
 
   private
